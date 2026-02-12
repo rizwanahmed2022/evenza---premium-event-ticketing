@@ -1,0 +1,7 @@
+{
+  "name": "Evenza - Premium Event Ticketing",
+  "description": "A production-level event management and ticketing platform with QR code validation, organizer dashboards, and real-time Firebase integration.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

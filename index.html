@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en" class="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Evenza | High-Contrast Ticketing</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://upload-widget.cloudinary.com/global/all.js" type="text/javascript"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <script>
+      tailwind.config = {
+        darkMode: 'class',
+        theme: {
+          extend: {
+            colors: {
+              primary: {
+                DEFAULT: '#10B981', // emerald-500
+                hover: '#059669',   // emerald-600
+                border: '#22C55E',  // bold emerald
+              },
+              brand: {
+                bg: '#E6FFFA',      // High-contrast mint background
+                card: '#FFFFFF',    // Pure white cards
+                text: '#064E3B',    // Dark forest green for readability
+                sub: '#065F46',     // Slightly softer green for labels
+              }
+            },
+            fontFamily: {
+              sans: ['Inter', 'sans-serif'],
+            }
+          }
+        }
+      }
+    </script>
+    <style>
+      /* Enforce strict minimal flat style: No shadows anywhere */
+      * {
+        box-shadow: none !important;
+        -webkit-font-smoothing: antialiased;
+        border-color: inherit;
+      }
+      
+      body {
+        transition: background-color 0.2s ease;
+      }
+
+      /* Clean Outlined Inputs with 5px radius and consistent padding */
+      input, select, textarea {
+        border-width: 2px !important;
+        border-style: solid !important;
+        border-color: #10B981 !important;
+        background-color: #FFFFFF !important;
+        color: #064E3B !important;
+        padding: 0.875rem 1.25rem;
+        border-radius: 5px !important;
+        transition: border-color 0.2s ease, background-color 0.2s ease !important;
+        width: 100%;
+        font-weight: 700 !important;
+        font-size: 1rem;
+        outline: none !important;
+      }
+
+      .dark input, .dark select, .dark textarea {
+        background-color: #000000 !important;
+        border-color: #1F2937 !important;
+        color: #FFFFFF !important;
+      }
+      
+      input:focus, select:focus, textarea:focus {
+        border-color: #059669 !important;
+      }
+      
+      .dark input:focus, .dark select:focus, .dark textarea:focus {
+        border-color: #10B981 !important;
+      }
+
+      input::placeholder {
+        opacity: 0.3;
+      }
+
+      .border-brand {
+        border-width: 2px;
+        border-color: #22C55E;
+      }
+
+      .dark .border-brand {
+        border-color: #1F2937;
+      }
+
+      /* Hide ugly browser defaults */
+      input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+        filter: invert(0.5);
+        cursor: pointer;
+      }
+      .dark input[type="datetime-local"]::-webkit-calendar-picker-indicator {
+        filter: invert(1);
+      }
+    </style>
+  <script type="importmap">
+{
+  "imports": {
+    "react": "https://esm.sh/react@^19.2.4",
+    "react-dom/": "https://esm.sh/react-dom@^19.2.4/",
+    "react/": "https://esm.sh/react@^19.2.4/",
+    "firebase/": "https://esm.sh/firebase@^12.9.0/",
+    "@google/genai": "https://esm.sh/@google/genai@^1.40.0",
+    "lucide-react": "https://esm.sh/lucide-react@^0.563.0",
+    "react-router-dom": "https://esm.sh/react-router-dom@^7.13.0",
+    "qrcode.react": "https://esm.sh/qrcode.react@^4.2.0",
+    "jspdf": "https://esm.sh/jspdf@^2.5.1",
+    "html2canvas": "https://esm.sh/html2canvas@^1.4.1"
+  }
+}
+</script>
+<link rel="stylesheet" href="/index.css">
+</head>
+  <body class="bg-brand-bg dark:bg-black text-brand-text dark:text-[#E5E7EB] font-sans">
+    <div id="root"></div>
+  <script type="module" src="/index.tsx"></script>
+</body>
+</html>
